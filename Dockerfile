@@ -17,4 +17,4 @@ RUN npm run start
 
 FROM ubuntu:latest
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["./helpers/alivve.sh"]
