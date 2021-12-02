@@ -14,3 +14,5 @@ COPY package.json ./
 RUN npm install --frozen-lockfile
 COPY . .
 RUN npm run start
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
