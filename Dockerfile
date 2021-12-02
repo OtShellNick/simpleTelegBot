@@ -15,11 +15,6 @@ RUN npm install --frozen-lockfile
 COPY . .
 RUN npm run start
 
-FROM nginx:1.19-alpine AS server
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+FROM ubuntu:latest
 
-COPY --from=builder /src/dist /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
