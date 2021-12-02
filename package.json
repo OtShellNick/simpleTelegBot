@@ -1,0 +1,23 @@
+{
+  "name": "simpletelegbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env TOKEN= node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OtShellNick/simpleTelegBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OtShellNick/simpleTelegBot/issues"
+  },
+  "homepage": "https://github.com/OtShellNick/simpleTelegBot#readme",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "telegraf": "^4.4.2"
+  }
+}
