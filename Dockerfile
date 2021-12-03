@@ -1,20 +1,7 @@
 FROM node:14-alpine AS builder
-#RUN apt-get update -qq && apt-get install -y build-essential
-RUN apk add --update \
-    python3 \
-    python3-dev \
-    py3-pip \
-  && rm -rf /var/cache/apk/*
+COPY . ./home/bot
+WORKDIR ./home/bot
 
-WORKDIR /src
+RUN npm install
 
-COPY package.json ./
-#COPY package-lock.json ./
-
-RUN npm install --frozen-lockfile
-COPY . .
-RUN npm run start
-
-FROM ubuntu:latest
-
-ENTRYPOINT ["./helpers/alivve.sh"]
+CMD ["./index.js"]
