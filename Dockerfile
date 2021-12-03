@@ -4,4 +4,4 @@ WORKDIR ./home/bot
 
 RUN npm install
 
-CMD ["./index.js"]
+CMD ["npm", "run", "start"]
