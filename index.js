@@ -1,12 +1,12 @@
 const {Telegraf} = require('telegraf');
 const { help } = require('./components/help');
 const { kh } = require('./components/kh');
+const { main } = require('./components/main');
 
 const bot = new Telegraf(process.env.TOKEN)
 console.log('Started successfully');
-bot.start((ctx) => ctx.reply('Welcome'))
+bot.start(main)
 bot.help(help)
 bot.on('sticker', (ctx) => ctx.reply('👍'))
-bot.hears('hi', (ctx) => ctx.reply('Hey there'));
-bot.command('kh', ctx => kh(ctx, bot))
-bot.launch()
+bot.hears('КХ викторина', ctx => kh(ctx, bot))
+bot.launch(main)
