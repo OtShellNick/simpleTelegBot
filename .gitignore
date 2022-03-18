@@ -42,3 +42,4 @@ package-lock.json
 .workspace.xml
 .workspace
 workspace.xml
+.env
