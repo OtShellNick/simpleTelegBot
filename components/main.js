@@ -8,7 +8,7 @@ module.exports = {
                 .then(resp => {
                     if(resp) ctx.reply(resp)
                 });
-        }, 6000);
+        }, 60000);
 
         return ctx.reply('Welcome', Markup
             .keyboard([
