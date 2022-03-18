@@ -5,8 +5,10 @@ module.exports = {
     main(ctx) {
         setInterval(() => {
             checkItems()
-                .then(resp => ctx.reply(resp));
-        }, 60000);
+                .then(resp => {
+                    if(resp) ctx.reply(resp)
+                });
+        }, 6000);
 
         return ctx.reply('Welcome', Markup
             .keyboard([

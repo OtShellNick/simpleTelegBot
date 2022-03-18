@@ -11,6 +11,7 @@ const checkItems = () => JSDOM.fromURL(url)
         html.forEach(item => arr.push((Number(item.textContent.split(' ').join('')) / 1000000) + 'kk'));
 
         if (arr.length > mainItemsList.length) mainItemsList = [...arr];
+        if(arr.length >= mainItemsList.length) return false;
         if (arr.length < mainItemsList.length) {
             let message = '';
             mainItemsList.forEach(item => {
