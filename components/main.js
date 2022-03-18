@@ -4,7 +4,8 @@ const {checkItems} = require("./upgradeIrem");
 module.exports = {
     main(ctx) {
         setInterval(() => {
-            checkItems(ctx);
+            checkItems()
+                .then(resp => ctx.reply(resp));
         }, 60000);
 
         return ctx.reply('Welcome', Markup
